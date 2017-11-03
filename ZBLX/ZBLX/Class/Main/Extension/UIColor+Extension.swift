@@ -11,11 +11,11 @@ import UIKit
 extension UIColor{
     //在Extension中给系统的类扩展构造函数,只能扩展便利构造函数
     //便利构造函数必须调用self.init
-    convenience init(r : CGFloat ,g :CGFloat ,b : CGFloat, a : CGFloat = 1.0){
+    @objc convenience init(r : CGFloat ,g :CGFloat ,b : CGFloat, a : CGFloat = 1.0){
         self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
     }
     
-    convenience init?(hex : String,alpha : CGFloat = 1.0){
+    @objc convenience init?(hex : String,alpha : CGFloat = 1.0){
         //0xFF0000
         guard hex.count >= 6 else{
             return nil
@@ -48,7 +48,7 @@ extension UIColor{
         
     }
     // MARK: - 随机色
-    class func randomColor() -> UIColor{
+    @objc class func randomColor() -> UIColor{
         return UIColor(r: CGFloat(arc4random_uniform(256)), g: CGFloat(arc4random_uniform(256)), b: CGFloat(arc4random_uniform(256)))
     }
     

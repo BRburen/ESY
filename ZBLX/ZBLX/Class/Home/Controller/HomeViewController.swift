@@ -15,14 +15,14 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = UIColor.randomColor()
         setupUI()
-        setupNavigationBar()
+        
     }
 }
 
 // MARK: - 设置UI界面
 extension HomeViewController{
     fileprivate func setupUI(){
-        
+        setupNavigationBar()
     }
     
     private func setupNavigationBar(){

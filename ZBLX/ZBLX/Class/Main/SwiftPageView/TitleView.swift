@@ -220,11 +220,11 @@ extension TitleView{
 
 // MARK: - ContentViewDelegate
 extension TitleView : ContentViewDelegate{
-    func contentView(_ contentView: ContentView, targetIndex: Int) {
+    @objc func contentView(_ contentView: ContentView, targetIndex: Int) {
         adjustTitleLabel(targetIndex: targetIndex)
     }
     
-    func contentView(_ contentView: ContentView, targetIndex: Int,sourceIndex : Int, progress: CGFloat) {
+    @objc func contentView(_ contentView: ContentView, targetIndex: Int,sourceIndex : Int, progress: CGFloat) {
         //1 取出Label
         let targetLabel = titleLabels[targetIndex]
         let sourceLabel = titleLabels[sourceIndex]

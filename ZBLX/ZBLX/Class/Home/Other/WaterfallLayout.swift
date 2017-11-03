@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 protocol WaterfallLayoutDataSource : class{
     func numberOfCols(_ waterfallLayout : WaterfallLayout) ->Int
     func waterfall(_ waterfallLayout : WaterfallLayout , item : Int) -> CGFloat
@@ -21,7 +20,9 @@ class WaterfallLayout: UICollectionViewFlowLayout {
         return self.dataSource?.numberOfCols(self) ?? 2
     }()
     
-    fileprivate lazy var totalHeight : [CGFloat] = Array(repeatElement(sectionInset.top, count: self.cols) )
+//    fileprivate lazy var totalHeight : [CGFloat] = Array(repeatElement(sectionInset.top, count: self.cols) )
+    
+    fileprivate lazy var totalHeight : [CGFloat] = Array(repeatElement(10, count: self.cols) )
 
 }
 // MARK: - 准备布局

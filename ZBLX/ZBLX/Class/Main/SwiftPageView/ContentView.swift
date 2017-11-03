@@ -41,7 +41,7 @@ class ContentView: UIView {
         return collectionView
     }()
     
-    init(frame: CGRect , childVcs : [UIViewController] , parentVc : UIViewController) {
+    @objc init(frame: CGRect , childVcs : [UIViewController] , parentVc : UIViewController) {
         self.childVcs = childVcs
         self.parentVc = parentVc
         
@@ -152,7 +152,7 @@ extension ContentView : UICollectionViewDelegate{
 
 // MARK: - TitleViewDelegate
 extension ContentView : TitleViewDelegate{
-    func titleView(_ titleView: TitleView, targetIndex: Int) {
+    @objc func titleView(_ titleView: TitleView, targetIndex: Int) {
         useDelegate = false
         let indexPath = IndexPath(item: targetIndex, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
