@@ -23,14 +23,14 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDV-NN-iyX" userLabel="背景Image">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" red="1" green="0.42988924375658077" blue="0.047379510165868943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruQ-hm-00l" userLabel="容器View">
                     <rect key="frame" x="16" y="30" width="180" height="32"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Edo-Sd-Fbo" userLabel="头像">
                             <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="Y83-DD-2QG"/>
                                 <constraint firstAttribute="width" constant="32" id="sDV-5y-ytM"/>
@@ -62,7 +62,7 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="72Y-Wy-wHV" secondAttribute="trailing" id="3Mv-VC-d74"/>
                         <constraint firstAttribute="bottom" secondItem="n9L-z2-Sd6" secondAttribute="bottom" id="6OG-ur-Sw7"/>
@@ -102,25 +102,40 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-HI-acK" userLabel="底部容器">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kty-ZZ-u6Y" userLabel="聊天">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a44-vJ-B64" userLabel="分享">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
-                            <state key="normal" image="room_btn_chat"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a44-vJ-B64" userLabel="分享">
-                            <rect key="frame" x="75" y="0.0" width="75" height="44"/>
                             <state key="normal" image="menu_btn_share"/>
+                            <connections>
+                                <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="rCU-IO-XCa"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-fO-Bc5" userLabel="礼物">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kty-ZZ-u6Y" userLabel="聊天">
+                            <rect key="frame" x="75" y="0.0" width="75" height="44"/>
+                            <state key="normal" image="room_btn_chat"/>
+                            <connections>
+                                <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="nPM-iw-Gb6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-fO-Bc5" userLabel="礼物">
                             <rect key="frame" x="150" y="0.0" width="75" height="44"/>
                             <state key="normal" image="room_btn_gift"/>
+                            <connections>
+                                <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="Hlb-BF-pk7"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqG-ni-cuN" userLabel="更多">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqG-ni-cuN" userLabel="更多">
                             <rect key="frame" x="225" y="0.0" width="75" height="44"/>
                             <state key="normal" image="room_btn_more"/>
+                            <connections>
+                                <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="CAn-se-wQ4"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRF-Pw-J96" userLabel="星星">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRF-Pw-J96" userLabel="星星">
                             <rect key="frame" x="300" y="0.0" width="75" height="44"/>
                             <state key="normal" image="room_btn_qfstar"/>
+                            <connections>
+                                <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="AZq-eR-eWs"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

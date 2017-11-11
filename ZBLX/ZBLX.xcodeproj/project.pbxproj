@@ -24,6 +24,8 @@
 		136175B31FAEB8F100EE2B3E /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136175B11FAEB8F100EE2B3E /* HomeViewCell.swift */; };
 		136175B41FAEB8F100EE2B3E /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136175B21FAEB8F100EE2B3E /* HomeViewCell.xib */; };
 		136175B71FAEC64100EE2B3E /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136175B61FAEC64100EE2B3E /* types.plist */; };
+		137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F23971FB7072400C779EB /* EmitterAnimation.swift */; };
+		1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399557A1FB744C60031AFF4 /* NibLoadable.swift */; };
 		13CE3DC01FAC5EC40049D1AB /* ContenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBC1FAC5EC40049D1AB /* ContenerView.swift */; };
 		13CE3DC11FAC5EC40049D1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBD1FAC5EC40049D1AB /* ContentView.swift */; };
 		13CE3DC21FAC5EC40049D1AB /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBE1FAC5EC40049D1AB /* TitleStyle.swift */; };
@@ -66,6 +68,8 @@
 		136175B11FAEB8F100EE2B3E /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		136175B21FAEB8F100EE2B3E /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		136175B61FAEC64100EE2B3E /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
+		137F23971FB7072400C779EB /* EmitterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterAnimation.swift; sourceTree = "<group>"; };
+		1399557A1FB744C60031AFF4 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		13CE3DBC1FAC5EC40049D1AB /* ContenerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenerView.swift; sourceTree = "<group>"; };
 		13CE3DBD1FAC5EC40049D1AB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		13CE3DBE1FAC5EC40049D1AB /* TitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		134F6EC51FA5AADC007B449D /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				137F23961FB706EC00C779EB /* Protocol */,
 				134AD58C1FB57D270040DEAE /* Live */,
 				136175B51FAEC62600EE2B3E /* Resource */,
 				134F6ECC1FA5AB64007B449D /* Base */,
@@ -258,6 +263,15 @@
 				136175B61FAEC64100EE2B3E /* types.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		137F23961FB706EC00C779EB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				137F23971FB7072400C779EB /* EmitterAnimation.swift */,
+				1399557A1FB744C60031AFF4 /* NibLoadable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		13CE3DBB1FAC5EC40049D1AB /* SwiftPageView */ = {
@@ -487,11 +501,13 @@
 				13E321871FA5BB800094AF4C /* MainViewController.swift in Sources */,
 				134F6EB61FA5AA0C007B449D /* ViewController.swift in Sources */,
 				13FD8B361FA6D1C900227847 /* DiscoverViewController.swift in Sources */,
+				137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */,
 				13CE3DE31FAC7F110049D1AB /* HomeType.swift in Sources */,
 				134F6EB41FA5AA0C007B449D /* AppDelegate.swift in Sources */,
 				13FD8B321FA6D0F700227847 /* HomeViewController.swift in Sources */,
 				13CE3DC21FAC5EC40049D1AB /* TitleStyle.swift in Sources */,
 				13CE3DC61FAC5EF60049D1AB /* WaterfallLayout.swift in Sources */,
+				1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */,
 				13CE3DC11FAC5EC40049D1AB /* ContentView.swift in Sources */,
 				136175B01FAEB48900EE2B3E /* AnchorViewController.swift in Sources */,
 				1352E9DA1FAD8A78004DFA15 /* KingfisherExtension.swift in Sources */,

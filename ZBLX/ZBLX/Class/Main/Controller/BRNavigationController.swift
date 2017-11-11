@@ -13,13 +13,13 @@ class BRNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var count = UInt32()
-        let iVar = class_copyIvarList(UIGestureRecognizer.self, &count)!
-        for i in 0..<count {
-            let nameP = ivar_getName(iVar[Int(i)])!
-            let name = String(cString: nameP)
-            print(name)
-        }
+//        var count = UInt32()
+//        let iVar = class_copyIvarList(UIGestureRecognizer.self, &count)!
+//        for i in 0..<count {
+//            let nameP = ivar_getName(iVar[Int(i)])!
+//            let name = String(cString: nameP)
+//            print(name)
+//        }
         
         guard let targets = interactivePopGestureRecognizer?.value(forKey: "_targets") as? [NSObject] else{ return }
         let targetObjc = targets[0]
