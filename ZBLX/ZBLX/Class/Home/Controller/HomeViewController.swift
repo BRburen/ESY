@@ -12,10 +12,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.randomColor()
+    
         setupUI()
-        
+        print(view.frame)
     }
 }
 
@@ -23,6 +22,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController{
     fileprivate func setupUI(){
         setupNavigationBar()
+        setupContenerView()
     }
     
     private func setupNavigationBar(){
@@ -46,8 +46,50 @@ extension HomeViewController{
         
     }
     
+    fileprivate func setupContenerView(){
+        //获取数据
+        let homeTypes = loadTypesData()
+        
+        //2创建主题内容
+        let styl = TitleStyle()
+        styl.isShowShadow = true
+        styl.isScrollEnable = true
+        styl.isShowScrollLine = true
+        styl.isNeedScale = true
+        let pageFrame = CGRect(x: 0, y: kNavigationBarH + kStatusBarH, width: kScreenW, height: kScreenH - kNavigationBarH - kStatusBarH)
+        /*
+         var titles = [String]()
+         for type in homeTypes {
+         titles.append(type.title)
+         }
+         */
+        
+        /*
+         let titles = homeTypes.map { (type : HomeType) -> String in
+         return type.title
+         }
+         */
+        let titles = homeTypes.map({ $0.title })
+        var childVcs = [AnchorViewController]()
+        for type in homeTypes{
+            let anchorVc = AnchorViewController()
+            anchorVc.homeType = type
+            childVcs.append(anchorVc)
+        }
+        let pageView = ContenerView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, titleStyle: styl)
+        view.addSubview(pageView)
+    }
     
-    
+    fileprivate func loadTypesData() ->[HomeType]{
+        
+        let path = Bundle.main.path(forResource: "types.plist", ofType: nil)!
+        let dataArray = NSArray(contentsOfFile: path) as! [[String : Any]]
+        var tempArray = [HomeType]()
+        for dict in dataArray{
+            tempArray.append(HomeType(dict: dict))
+        }
+        return tempArray
+    }
 }
 // MARK: - 事件监听
 extension HomeViewController{

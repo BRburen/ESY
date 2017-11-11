@@ -16,7 +16,6 @@ class MainViewController: UITabBarController {
         addChildVc(storyName: "Rank")
         addChildVc(storyName: "Discover")
         addChildVc(storyName: "Profile")
-        print("aaa")
     }
     
     private func addChildVc(storyName : String){

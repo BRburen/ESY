@@ -7,79 +7,84 @@
 //
 
 import UIKit
-protocol WaterfallLayoutDataSource : class{
-    func numberOfCols(_ waterfallLayout : WaterfallLayout) ->Int
-    func waterfall(_ waterfallLayout : WaterfallLayout , item : Int) -> CGFloat
+@objc protocol WaterfallLayoutDataSource : class{
+    func waterfallLayout(_ layout : WaterfallLayout, indexPath : IndexPath) -> CGFloat
+    @objc optional func numberOfColsInWaterfallLayout(_ layout : WaterfallLayout) -> Int
 }
 
 class WaterfallLayout: UICollectionViewFlowLayout {
+    
+    // MARK: 对外提供属性
     weak var dataSource : WaterfallLayoutDataSource?
-    fileprivate lazy var cellAttr = [UICollectionViewLayoutAttributes]()
     
-    fileprivate lazy var cols : Int = {
-        return self.dataSource?.numberOfCols(self) ?? 2
+    // MARK: 私有属性
+    fileprivate lazy var attrsArray : [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
+    fileprivate var totalHeight : CGFloat = 0
+    fileprivate lazy var colHeights : [CGFloat] = {
+        let cols = self.dataSource?.numberOfColsInWaterfallLayout?(self) ?? 2
+        var colHeights = Array(repeating: self.sectionInset.top, count: cols)
+        return colHeights
     }()
+    fileprivate var maxH : CGFloat = 0
+    fileprivate var startIndex = 0
     
-//    fileprivate lazy var totalHeight : [CGFloat] = Array(repeatElement(sectionInset.top, count: self.cols) )
-    
-    fileprivate lazy var totalHeight : [CGFloat] = Array(repeatElement(10, count: self.cols) )
-
 }
 // MARK: - 准备布局
 extension WaterfallLayout{
     override func prepare() {
         super.prepare()
         
-        
-        //  !!! 每一个Cell对应一个 -> UICollectionViewLayoutAttributes  Cell的位置和大小是由它来决定的
-        
-        
-        
-        //获取Cell的个数
+        // 0.获取item的个数
         let itemCount = collectionView!.numberOfItems(inSection: 0)
-        //给每一个Cell创建UICollectionViewLayoutAttributes
-        let cellW : CGFloat = (collectionView!.bounds.width - sectionInset.left - sectionInset.right - CGFloat(cols - 1) * minimumInteritemSpacing) / CGFloat(cols)
-        for i in 0..<itemCount{
-            //1根据其创建IndexPath
+        
+        // 1.获取列数
+        let cols = dataSource?.numberOfColsInWaterfallLayout?(self) ?? 2
+        
+        // 2.计算Item的宽度
+        let itemW = (collectionView!.bounds.width - self.sectionInset.left - self.sectionInset.right - self.minimumInteritemSpacing) / CGFloat(cols)
+        
+        // 3.计算所有的item的属性
+        for i in startIndex..<itemCount {
+            // 1.设置每一个Item位置相关的属性
             let indexPath = IndexPath(item: i, section: 0)
-            //根据indexPath创建对应的UIcollectionViewLayoutAttributes
-            let attr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            //3设置attribute的frame
-            guard let cellH : CGFloat = dataSource?.waterfall(self, item: i) else{
-                fatalError("请实现对应的数据源方法,并返回Cell高度 ")
+            
+            // 2.根据位置创建Attributes属性
+            let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            
+            // 3.随机一个高度
+            guard let height = dataSource?.waterfallLayout(self, indexPath: indexPath) else {
+                fatalError("请设置数据源,并且实现对应的数据源方法")
             }
             
+            // 4.取出最小列的位置
+            var minH = colHeights.min()!
+            let index = colHeights.index(of: minH)!
+            minH = minH + height + minimumLineSpacing
+            colHeights[index] = minH
             
-            //先计算出最短那一列的高度
-            let minH : CGFloat = totalHeight.min()!
-            //再计算出是那一列 Index
-            let minIndex = totalHeight.index(of: minH)!
-            //再计算X
-            let cellX : CGFloat = sectionInset.left + (minimumInteritemSpacing + cellW) * CGFloat(minIndex)
-            
-            
-            let  cellY : CGFloat = minH + minimumLineSpacing
-            
-            attr.frame = CGRect(x: cellX, y: cellY, width: cellW, height: cellH)
-            //4保存attributes
-            cellAttr .append(attr)
-            
-            //5 添加昂前的高度
-            totalHeight[minIndex] = minH + minimumLineSpacing + cellH
+            // 5.设置item的属性
+            attrs.frame = CGRect(x: self.sectionInset.left + (self.minimumInteritemSpacing + itemW) * CGFloat(index), y: minH - height - self.minimumLineSpacing, width: itemW, height: height)
+            attrsArray.append(attrs)
         }
-    }
+        
+        // 4.记录最大值
+        maxH = colHeights.max()!
+        
+        // 5.给startIndex重新复制
+        startIndex = itemCount
+        }
 }
 
 // MARK: - 返回准备好的所有布局
 extension WaterfallLayout{
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return cellAttr
+        return attrsArray
     }
 }
 
 // MARK: - 设置contentSize {
 extension WaterfallLayout{
     override var collectionViewContentSize: CGSize{
-        return CGSize(width: 0, height: totalHeight.max()! + sectionInset.bottom)
+        return CGSize(width: 0, height: maxH + sectionInset.bottom - minimumLineSpacing)
     }
 }

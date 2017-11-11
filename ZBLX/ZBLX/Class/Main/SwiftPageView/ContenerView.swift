@@ -9,20 +9,24 @@
 import UIKit
 
 class ContenerView: UIView {
-    fileprivate var titles : [String]
-    fileprivate var childVcs : [UIViewController]
-    fileprivate var parentVc : UIViewController
-    fileprivate var titleStyle : TitleStyle
+    fileprivate var titles : [String]!
+    fileprivate var childVcs : [UIViewController]!
+    fileprivate var parentVc : UIViewController!
+    fileprivate var titleStyle : TitleStyle!
     
     fileprivate var titleView : TitleView!
-    
+    fileprivate var contentView : ContentView!
     init(frame : CGRect , titles :[String] , childVcs : [UIViewController], parentVc : UIViewController , titleStyle : TitleStyle){
+        // MARK: - 重写便利构造函数必须条用super.init
+        super.init(frame: frame)
+        
+        assert(titles.count == childVcs.count, "标题&控制器个数不同,请检测!!!")
         self.titles = titles
         self.childVcs = childVcs
         self.parentVc = parentVc
         self.titleStyle = titleStyle
-        // MARK: - 重写便利构造函数必须条用super.init
-        super.init(frame: frame)
+        
+        parentVc.automaticallyAdjustsScrollViewInsets = false
         
         setupUI()
     }
@@ -35,27 +39,45 @@ class ContenerView: UIView {
 // MARK: - 设置UI界面
 extension ContenerView{
     fileprivate func setupUI(){
-        setupTitleView()
-        setupContentView()
-    }
-    private func setupTitleView(){
         
-        let titleFrame = CGRect(x: 0, y: 0, width: Int(bounds.width), height: Int(self.titleStyle.titleHeight))
-        titleView = TitleView(frame: titleFrame, titles: titles,titleStyle
-            : self.titleStyle)
+        let titleH : CGFloat = 44
+        
+        let titleFrame = CGRect(x: 0, y: 0, width: frame.width, height: titleH)
+        titleView = TitleView(frame: titleFrame, titles: titles,titleStyle : self.titleStyle)
         titleView.backgroundColor = UIColor.white
-        
         addSubview(titleView)
-    }
-    private func setupContentView(){
-        let contentViewFrame = CGRect(x: 0, y: titleStyle.titleHeight, width: bounds.width, height: bounds.height - titleStyle.titleHeight)
-        let contentView = ContentView(frame: contentViewFrame, childVcs: childVcs, parentVc: parentVc)
-        contentView.backgroundColor = UIColor.randomColor()
+        
+        let contentViewFrame = CGRect(x: 0, y: titleH, width: frame.width, height: frame.height - titleH)
+        contentView = ContentView(frame: contentViewFrame, childVcs: childVcs, parentVc: parentVc)
+        contentView.autoresizingMask = [.flexibleHeight , .flexibleWidth]
         addSubview(contentView)
         
         //设置代理
-        titleView.delegate = contentView
+        titleView.delegate = self
+        contentView.delegate = self
         
-        contentView.delegate = titleView
+        
+        
     }
+}
+
+extension ContenerView : TitleViewDelegate{
+    func titleView(_ titleView: TitleView, targetIndex: Int) {
+        contentView.setCurrentIndex(targetIndex)
+    }
+    
+    
+}
+
+extension ContenerView : ContentViewDelegate{
+    func contentViewEndScroll(_ contentView: ContentView) {
+        titleView.contentViewDidEndScroll()
+    }
+    
+    func contentView(_ contentView: ContentView, targetIndex: Int, sourceIndex: Int, progress: CGFloat) {
+        
+        titleView.setTitleWithProgress(targetIndex: targetIndex, sourceIndex: sourceIndex, progress: progress)
+    }
+    
+    
 }

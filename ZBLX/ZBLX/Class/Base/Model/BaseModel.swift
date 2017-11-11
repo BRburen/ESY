@@ -13,7 +13,7 @@ class BaseModel: NSObject {
         
     }
     
-    @objc init(dict : [String : Any]) {
+    init(dict : [String : Any]) {
         super.init()
         
         setValuesForKeys(dict)

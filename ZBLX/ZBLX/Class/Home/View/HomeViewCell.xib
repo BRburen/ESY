@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="HomeViewCell" customModule="ZBLX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="195"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="177" height="195"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-3a-lks" userLabel="Album Image View">
+                        <rect key="frame" x="0.0" y="0.0" width="177" height="195"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_live" translatesAutoresizingMaskIntoConstraints="NO" id="zRt-Bq-FFD" userLabel="Live Image View">
+                        <rect key="frame" x="146" y="8" width="23" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="s8R-S5-r6E"/>
+                            <constraint firstAttribute="height" constant="13" id="w5o-kg-5e4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三语女神诗诗休息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emH-al-xZo" userLabel="Nick Name Label">
+                        <rect key="frame" x="8" y="182" width="98.5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="eAN-ql-2tT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-zG-ecM">
+                        <rect key="frame" x="111.5" y="182.5" width="33" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="l8p-cm-frC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <state key="normal" title="2023" image="home_icon_people"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Ut2-3a-lks" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1A2-i8-Ftr"/>
+                <constraint firstItem="zRt-Bq-FFD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="2nG-3h-FYV"/>
+                <constraint firstAttribute="trailing" secondItem="Ut2-3a-lks" secondAttribute="trailing" id="5sV-mn-jUi"/>
+                <constraint firstItem="Ut2-3a-lks" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7am-z6-nCP"/>
+                <constraint firstAttribute="trailing" secondItem="zRt-Bq-FFD" secondAttribute="trailing" constant="8" id="TMy-4s-HYs"/>
+                <constraint firstItem="7gJ-zG-ecM" firstAttribute="leading" secondItem="emH-al-xZo" secondAttribute="trailing" constant="5" id="Vrz-3V-K9P"/>
+                <constraint firstItem="7gJ-zG-ecM" firstAttribute="centerY" secondItem="emH-al-xZo" secondAttribute="centerY" id="W6R-Cv-qeV"/>
+                <constraint firstAttribute="bottom" secondItem="emH-al-xZo" secondAttribute="bottom" constant="8" id="dTb-H1-VNZ"/>
+                <constraint firstAttribute="bottom" secondItem="Ut2-3a-lks" secondAttribute="bottom" id="pN4-58-R7X"/>
+                <constraint firstItem="emH-al-xZo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="sM6-fg-LHy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="alibumImageView" destination="Ut2-3a-lks" id="BKG-hB-O5d"/>
+                <outlet property="livieImageView" destination="zRt-Bq-FFD" id="T26-cF-HhT"/>
+                <outlet property="nickNameLabel" destination="emH-al-xZo" id="VeF-MJ-tuR"/>
+                <outlet property="onlinePeopleLabel" destination="7gJ-zG-ecM" id="Z9X-JL-PdA"/>
+            </connections>
+            <point key="canvasLocation" x="-37" y="-83"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_icon_live" width="23" height="13"/>
+        <image name="home_icon_people" width="7" height="7"/>
+    </resources>
+</document>
