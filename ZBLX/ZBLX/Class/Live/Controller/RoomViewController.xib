@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomViewController" customModule="ZBLX" customModuleProvider="target">
             <connections>
+                <outlet property="bgImageView" destination="LDV-NN-iyX" id="fXS-UF-UnY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qPG-ag-3K5"/>
             </connections>
         </placeholder>
@@ -102,16 +103,16 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-HI-acK" userLabel="底部容器">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a44-vJ-B64" userLabel="分享">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a44-vJ-B64" userLabel="分享">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
-                            <state key="normal" image="menu_btn_share"/>
+                            <state key="normal" image="room_btn_chat"/>
                             <connections>
                                 <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="rCU-IO-XCa"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kty-ZZ-u6Y" userLabel="聊天">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kty-ZZ-u6Y" userLabel="聊天">
                             <rect key="frame" x="75" y="0.0" width="75" height="44"/>
-                            <state key="normal" image="room_btn_chat"/>
+                            <state key="normal" image="menu_btn_share"/>
                             <connections>
                                 <action selector="bottomButtonClick:" destination="-1" eventType="touchUpInside" id="nPM-iw-Gb6"/>
                             </connections>

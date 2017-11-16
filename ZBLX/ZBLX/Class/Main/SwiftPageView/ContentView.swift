@@ -150,7 +150,7 @@ extension ContentView : UICollectionViewDelegate{
         }
         
         delegate?.contentView(self, targetIndex: targetIndex, sourceIndex: sourceIndex, progress: progress)
-        print("---\(progress)---\(sourceIndex)---\(targetIndex)")
+//        print("---\(progress)---\(sourceIndex)---\(targetIndex)")
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

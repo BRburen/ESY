@@ -59,7 +59,7 @@ extension EmitterAnimation where Self : UIViewController{
             cell.contents = UIImage(named: imageName)?.cgImage
             
             
-            print(imageName)
+            
            
             
             cellArray.append(cell)

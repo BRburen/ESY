@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     
         setupUI()
-        print(view.frame)
     }
 }
 

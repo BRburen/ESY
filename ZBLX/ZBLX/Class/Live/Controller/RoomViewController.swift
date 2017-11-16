@@ -10,8 +10,15 @@
 
 import UIKit
 
-class RoomViewController: UIViewController,EmitterAnimation {
 
+fileprivate let kChatToolViewHeight : CGFloat = 44
+
+class RoomViewController: UIViewController,EmitterAnimation {
+    
+    @IBOutlet weak var bgImageView: UIImageView!
+    fileprivate lazy var chatToolView : ChatToolsView = ChatToolsView.loadFromNib()
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -22,10 +29,54 @@ class RoomViewController: UIViewController,EmitterAnimation {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        setupUI()
+        watchKeyBourd()
+    }
+}
+// MARK: - 设置UI
+extension RoomViewController{
+    fileprivate func setupUI(){
+        setupBlurView()
+        setupBottomView()
+    }
+    //设置毛玻璃
+    private func setupBlurView(){
+        let blur = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        blurView.frame = bgImageView.bounds
+        bgImageView.addSubview(blurView)
+    }
+    //设置输入框
+    private func setupBottomView(){
+        chatToolView.frame = CGRect(x: 0, y: kScreenH, width: view.bounds.width, height: kChatToolViewHeight)
+        chatToolView.autoresizingMask = [.flexibleTopMargin , .flexibleWidth]
+        chatToolView.delegate = self
+        view.addSubview(chatToolView)
+    }
+}
+
+// MARK: - 监听键盘弹出
+extension RoomViewController {
+    fileprivate func watchKeyBourd (){
+        NotificationCenter.default.addObserver(self, selector: #selector(keybourdWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    @objc fileprivate func keybourdWillChangeFrame(_ note : Notification){
+        
+        let durantion = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+        let endFrame = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let inputViewY = endFrame.origin.y - kChatToolViewHeight
+        
+        UIView.animate(withDuration: durantion) {
+            UIView.setAnimationCurve(UIViewAnimationCurve(rawValue : 7)!)
+            let endY = inputViewY == (kScreenH - kChatToolViewHeight) ? kScreenH : inputViewY
+            self.chatToolView.frame.origin.y = endY
+            
+        }
     }
 }
 
@@ -34,11 +85,15 @@ extension RoomViewController {
     @IBAction func outLive(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        chatToolView.inoutTextFiled.resignFirstResponder()
+    }
     
     @IBAction func bottomButtonClick(_ sender: UIButton) {
         
         switch sender.tag {
         case 0:
+            chatToolView.inoutTextFiled.becomeFirstResponder()
             print("聊天")
         case 1:
             print("分享")
@@ -55,4 +110,12 @@ extension RoomViewController {
         }
         
     }
+}
+
+extension RoomViewController : ChatToolsViewDelegate{
+    func chatToolsView(toolView: ChatToolsView, message: String) {
+        print(message)
+    }
+    
+    
 }

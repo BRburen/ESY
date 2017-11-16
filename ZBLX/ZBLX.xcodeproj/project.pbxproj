@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1336DB0E1FBC8BCB00595E63 /* PageCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336DB0D1FBC8BCB00595E63 /* PageCollectionViewLayout.swift */; };
+		1346D9601FBD419800B288A4 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1346D95E1FBD419800B288A4 /* QHSohuGifSort.plist */; };
+		1346D9611FBD419800B288A4 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1346D95F1FBD419800B288A4 /* QHNormalEmotionSort.plist */; };
+		1346D9631FBD421C00B288A4 /* PageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9621FBD421C00B288A4 /* PageCollectionView.swift */; };
+		1346D9651FBD427E00B288A4 /* ChatToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9641FBD427E00B288A4 /* ChatToolsView.swift */; };
+		1346D9671FBD428B00B288A4 /* ChatToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1346D9661FBD428B00B288A4 /* ChatToolsView.xib */; };
+		1346D96B1FBD447300B288A4 /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9691FBD447300B288A4 /* EmoticonViewCell.swift */; };
+		1346D96C1FBD447300B288A4 /* EmoticonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1346D96A1FBD447300B288A4 /* EmoticonViewCell.xib */; };
+		1346D9901FBD747B00B288A4 /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D98F1FBD747B00B288A4 /* EmoticonView.swift */; };
+		1346D9921FBD759500B288A4 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9911FBD759500B288A4 /* Emoticon.swift */; };
+		1346D9941FBD761300B288A4 /* EnmticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9931FBD761300B288A4 /* EnmticonPackage.swift */; };
+		1346D9971FBD782000B288A4 /* EmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346D9961FBD782000B288A4 /* EmoticonViewModel.swift */; };
 		134AD5911FB57D630040DEAE /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134AD5901FB57D630040DEAE /* RoomViewController.swift */; };
 		134AD5931FB57D7A0040DEAE /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134AD5921FB57D7A0040DEAE /* RoomViewController.xib */; };
 		134F6EB41FA5AA0C007B449D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134F6EB31FA5AA0C007B449D /* AppDelegate.swift */; };
@@ -49,6 +61,18 @@
 /* Begin PBXFileReference section */
 		0036FFFF3897BB731FA305F0 /* Pods-ZBLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZBLX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZBLX/Pods-ZBLX.release.xcconfig"; sourceTree = "<group>"; };
 		03D332F555614B3289B8A151 /* Pods_ZBLX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZBLX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1336DB0D1FBC8BCB00595E63 /* PageCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewLayout.swift; sourceTree = "<group>"; };
+		1346D95E1FBD419800B288A4 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
+		1346D95F1FBD419800B288A4 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
+		1346D9621FBD421C00B288A4 /* PageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionView.swift; sourceTree = "<group>"; };
+		1346D9641FBD427E00B288A4 /* ChatToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToolsView.swift; sourceTree = "<group>"; };
+		1346D9661FBD428B00B288A4 /* ChatToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatToolsView.xib; sourceTree = "<group>"; };
+		1346D9691FBD447300B288A4 /* EmoticonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		1346D96A1FBD447300B288A4 /* EmoticonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonViewCell.xib; sourceTree = "<group>"; };
+		1346D98F1FBD747B00B288A4 /* EmoticonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
+		1346D9911FBD759500B288A4 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		1346D9931FBD761300B288A4 /* EnmticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnmticonPackage.swift; sourceTree = "<group>"; };
+		1346D9961FBD782000B288A4 /* EmoticonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonViewModel.swift; sourceTree = "<group>"; };
 		134AD5901FB57D630040DEAE /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		134AD5921FB57D7A0040DEAE /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		134F6EB01FA5AA0C007B449D /* ZBLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,9 +135,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1346D9681FBD42C800B288A4 /* ChatToolsView */ = {
+			isa = PBXGroup;
+			children = (
+				1346D9641FBD427E00B288A4 /* ChatToolsView.swift */,
+				1346D9661FBD428B00B288A4 /* ChatToolsView.xib */,
+				1346D9691FBD447300B288A4 /* EmoticonViewCell.swift */,
+				1346D96A1FBD447300B288A4 /* EmoticonViewCell.xib */,
+				1346D98F1FBD747B00B288A4 /* EmoticonView.swift */,
+			);
+			path = ChatToolsView;
+			sourceTree = "<group>";
+		};
+		1346D9951FBD780D00B288A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1346D9961FBD782000B288A4 /* EmoticonViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		134AD58C1FB57D270040DEAE /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				1346D9951FBD780D00B288A4 /* ViewModel */,
 				134AD58F1FB57D500040DEAE /* Model */,
 				134AD58E1FB57D4B0040DEAE /* View */,
 				134AD58D1FB57D3B0040DEAE /* Controller */,
@@ -133,6 +178,7 @@
 		134AD58E1FB57D4B0040DEAE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1346D9681FBD42C800B288A4 /* ChatToolsView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +186,8 @@
 		134AD58F1FB57D500040DEAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1346D9911FBD759500B288A4 /* Emoticon.swift */,
+				1346D9931FBD761300B288A4 /* EnmticonPackage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +213,7 @@
 		134F6EB21FA5AA0C007B449D /* ZBLX */ = {
 			isa = PBXGroup;
 			children = (
+				136175B51FAEC62600EE2B3E /* Resource */,
 				134F6EC51FA5AADC007B449D /* Class */,
 				134F6EB31FA5AA0C007B449D /* AppDelegate.swift */,
 				134F6EB51FA5AA0C007B449D /* ViewController.swift */,
@@ -180,7 +229,6 @@
 			children = (
 				137F23961FB706EC00C779EB /* Protocol */,
 				134AD58C1FB57D270040DEAE /* Live */,
-				136175B51FAEC62600EE2B3E /* Resource */,
 				134F6ECC1FA5AB64007B449D /* Base */,
 				134F6ECD1FA5AB64007B449D /* Main */,
 				134F6ECE1FA5AB64007B449D /* Home */,
@@ -260,6 +308,8 @@
 		136175B51FAEC62600EE2B3E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1346D95F1FBD419800B288A4 /* QHNormalEmotionSort.plist */,
+				1346D95E1FBD419800B288A4 /* QHSohuGifSort.plist */,
 				136175B61FAEC64100EE2B3E /* types.plist */,
 			);
 			path = Resource;
@@ -281,6 +331,9 @@
 				13CE3DBD1FAC5EC40049D1AB /* ContentView.swift */,
 				13CE3DBE1FAC5EC40049D1AB /* TitleStyle.swift */,
 				13CE3DBF1FAC5EC40049D1AB /* TitleView.swift */,
+				1346D9621FBD421C00B288A4 /* PageCollectionView.swift */,
+				1336DB0D1FBC8BCB00595E63 /* PageCollectionViewLayout.swift */,
+				13CE3DC51FAC5EF60049D1AB /* WaterfallLayout.swift */,
 			);
 			path = SwiftPageView;
 			sourceTree = "<group>";
@@ -289,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				1352E9DB1FAD8E62004DFA15 /* HomeViewModel.swift */,
-				13CE3DC51FAC5EF60049D1AB /* WaterfallLayout.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -428,13 +480,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1346D9601FBD419800B288A4 /* QHSohuGifSort.plist in Resources */,
 				134F6ED41FA5B034007B449D /* Rank.storyboard in Resources */,
 				134F6EBE1FA5AA0C007B449D /* LaunchScreen.storyboard in Resources */,
 				134F6EBB1FA5AA0C007B449D /* Assets.xcassets in Resources */,
 				136175B71FAEC64100EE2B3E /* types.plist in Resources */,
 				134F6EB91FA5AA0C007B449D /* Main.storyboard in Resources */,
 				134AD5931FB57D7A0040DEAE /* RoomViewController.xib in Resources */,
+				1346D9671FBD428B00B288A4 /* ChatToolsView.xib in Resources */,
 				134F6ED21FA5B016007B449D /* Home.storyboard in Resources */,
+				1346D9611FBD419800B288A4 /* QHNormalEmotionSort.plist in Resources */,
+				1346D96C1FBD447300B288A4 /* EmoticonViewCell.xib in Resources */,
 				136175B41FAEB8F100EE2B3E /* HomeViewCell.xib in Resources */,
 				13FD8B301FA6CFAA00227847 /* Profile.storyboard in Resources */,
 				134F6ED71FA5B062007B449D /* Discover.storyboard in Resources */,
@@ -498,23 +554,31 @@
 			files = (
 				1352E9D81FAD8A55004DFA15 /* NetWorkTools.swift in Sources */,
 				13FD8B341FA6D19F00227847 /* RankViewController.swift in Sources */,
+				1346D96B1FBD447300B288A4 /* EmoticonViewCell.swift in Sources */,
 				13E321871FA5BB800094AF4C /* MainViewController.swift in Sources */,
 				134F6EB61FA5AA0C007B449D /* ViewController.swift in Sources */,
 				13FD8B361FA6D1C900227847 /* DiscoverViewController.swift in Sources */,
+				1346D9901FBD747B00B288A4 /* EmoticonView.swift in Sources */,
+				1346D9921FBD759500B288A4 /* Emoticon.swift in Sources */,
 				137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */,
 				13CE3DE31FAC7F110049D1AB /* HomeType.swift in Sources */,
 				134F6EB41FA5AA0C007B449D /* AppDelegate.swift in Sources */,
 				13FD8B321FA6D0F700227847 /* HomeViewController.swift in Sources */,
 				13CE3DC21FAC5EC40049D1AB /* TitleStyle.swift in Sources */,
 				13CE3DC61FAC5EF60049D1AB /* WaterfallLayout.swift in Sources */,
+				1336DB0E1FBC8BCB00595E63 /* PageCollectionViewLayout.swift in Sources */,
 				1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */,
 				13CE3DC11FAC5EC40049D1AB /* ContentView.swift in Sources */,
+				1346D9941FBD761300B288A4 /* EnmticonPackage.swift in Sources */,
 				136175B01FAEB48900EE2B3E /* AnchorViewController.swift in Sources */,
+				1346D9631FBD421C00B288A4 /* PageCollectionView.swift in Sources */,
+				1346D9651FBD427E00B288A4 /* ChatToolsView.swift in Sources */,
 				1352E9DA1FAD8A78004DFA15 /* KingfisherExtension.swift in Sources */,
 				13CE3DCF1FAC6A6C0049D1AB /* NSDate+Extention.swift in Sources */,
 				13CE3DE61FAC7F2F0049D1AB /* BaseModel.swift in Sources */,
 				134AD5911FB57D630040DEAE /* RoomViewController.swift in Sources */,
 				13CE3DCC1FAC69780049D1AB /* File.swift in Sources */,
+				1346D9971FBD782000B288A4 /* EmoticonViewModel.swift in Sources */,
 				13CE3DC01FAC5EC40049D1AB /* ContenerView.swift in Sources */,
 				1352E9DC1FAD8E62004DFA15 /* HomeViewModel.swift in Sources */,
 				136175B31FAEB8F100EE2B3E /* HomeViewCell.swift in Sources */,
@@ -687,7 +751,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZ5JCT3TWV;
 				INFOPLIST_FILE = ZBLX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BR-buren.ZBLX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,7 +769,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZ5JCT3TWV;
 				INFOPLIST_FILE = ZBLX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BR-buren.ZBLX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
