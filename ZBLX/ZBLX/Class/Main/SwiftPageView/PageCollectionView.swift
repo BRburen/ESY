@@ -59,7 +59,7 @@ extension PageCollectionView {
         let titleY = isTitleInTop ? 0 : bounds.height - styl.titleHeight
         let frame = CGRect(x: 0, y: titleY, width: bounds.size.width, height: styl.titleHeight)
         titleView = TitleView(frame: frame, titles: titles, titleStyle: styl)
-        titleView.backgroundColor = UIColor.white
+        titleView.backgroundColor = UIColor.black
         titleView.delegate = self
         addSubview(titleView)
         
@@ -69,7 +69,7 @@ extension PageCollectionView {
         let pageCntrollerFrame = CGRect(x: 0, y: pageControllerY, width: bounds.width, height: pageControllerHeight)
         pageConteroller = UIPageControl(frame: pageCntrollerFrame)
         pageConteroller.numberOfPages = 4
-        pageConteroller.backgroundColor = UIColor.lightGray
+        pageConteroller.backgroundColor = UIColor.black
         pageConteroller.isEnabled = false
         addSubview(pageConteroller)
         
@@ -77,12 +77,30 @@ extension PageCollectionView {
         let collectionViewY = isTitleInTop ? styl.titleHeight : 0
         let collectionFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - pageControllerHeight - styl.titleHeight)
         collectionView = UICollectionView(frame: collectionFrame, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.lightGray
+        collectionView.backgroundColor = UIColor.black
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         addSubview(collectionView)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let titleY = isTitleInTop ? 0 : bounds.height - styl.titleHeight
+        let frame = CGRect(x: 0, y: titleY, width: bounds.size.width, height: styl.titleHeight)
+        titleView.frame = frame
+        
+        let pageControllerHeight : CGFloat = 20
+        let pageControllerY = isTitleInTop ? bounds.height - pageControllerHeight : bounds.height - pageControllerHeight - styl.titleHeight
+        let pageCntrollerFrame = CGRect(x: 0, y: pageControllerY, width: bounds.width, height: pageControllerHeight)
+        pageConteroller.frame = pageCntrollerFrame
+        
+        let collectionViewY = isTitleInTop ? styl.titleHeight : 0
+        let collectionFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - pageControllerHeight - styl.titleHeight)
+        collectionView.frame = collectionFrame
+        
     }
 }
 
@@ -105,6 +123,7 @@ extension PageCollectionView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return dataSource!.pageCollectionView(self, collectionView, cellForItemAt: indexPath)
     }
+    
     
 }
 
@@ -149,6 +168,11 @@ extension PageCollectionView : TitleViewDelegate{
 
 // MARK: - 对外暴露方法 注册Cell
 extension PageCollectionView {
+    
+    func reloadData(){
+        collectionView.reloadData()
+    }
+    
     func register(cellClass : AnyClass?,identifier : String ){
         collectionView.register(cellClass, forCellWithReuseIdentifier: identifier)
     }

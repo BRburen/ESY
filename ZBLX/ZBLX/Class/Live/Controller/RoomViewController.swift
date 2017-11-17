@@ -12,12 +12,13 @@ import UIKit
 
 
 fileprivate let kChatToolViewHeight : CGFloat = 44
+fileprivate let kGiftListViewHeight : CGFloat = kScreenH * 0.5
 
 class RoomViewController: UIViewController,EmitterAnimation {
     
     @IBOutlet weak var bgImageView: UIImageView!
     fileprivate lazy var chatToolView : ChatToolsView = ChatToolsView.loadFromNib()
-    
+    fileprivate lazy var giftView : GiftListView = GiftListView.loadFromNib()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,13 +36,16 @@ class RoomViewController: UIViewController,EmitterAnimation {
         
         setupUI()
         watchKeyBourd()
+        
     }
 }
+
 // MARK: - 设置UI
 extension RoomViewController{
     fileprivate func setupUI(){
         setupBlurView()
         setupBottomView()
+        setupGiftLiseView()
     }
     //设置毛玻璃
     private func setupBlurView(){
@@ -57,6 +61,13 @@ extension RoomViewController{
         chatToolView.autoresizingMask = [.flexibleTopMargin , .flexibleWidth]
         chatToolView.delegate = self
         view.addSubview(chatToolView)
+    }
+    
+    private func setupGiftLiseView(){
+        giftView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftListViewHeight)
+        giftView.autoresizingMask = [.flexibleTopMargin , .flexibleWidth]
+        giftView.delegate = self
+        view.addSubview(giftView)
     }
 }
 
@@ -87,6 +98,10 @@ extension RoomViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         chatToolView.inoutTextFiled.resignFirstResponder()
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftView.frame.origin.y = kScreenH 
+        })
     }
     
     @IBAction func bottomButtonClick(_ sender: UIButton) {
@@ -94,11 +109,12 @@ extension RoomViewController {
         switch sender.tag {
         case 0:
             chatToolView.inoutTextFiled.becomeFirstResponder()
-            print("聊天")
         case 1:
             print("分享")
         case 2:
-            print("礼物")
+            UIView.animate(withDuration: 0.25, animations: {
+                self.giftView.frame.origin.y = kScreenH - kGiftListViewHeight
+            })
         case 3:
             print("菜单")
         case 4:
@@ -112,10 +128,22 @@ extension RoomViewController {
     }
 }
 
+// MARK: - ChatToolsViewDelegate
 extension RoomViewController : ChatToolsViewDelegate{
     func chatToolsView(toolView: ChatToolsView, message: String) {
         print(message)
     }
+}
+
+// MARK: - GiftListViewDelegate
+extension RoomViewController : GiftListViewDelegate{
+    func giftListView(_ giftListView: GiftListView, _ giftModel: GiftModel) {
+        print(giftModel.subject)
+    }
     
     
 }
+
+
+
+

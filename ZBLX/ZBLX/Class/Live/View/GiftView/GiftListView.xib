@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GiftListView" customModule="ZBLX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赠送礼物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugk-tq-avo">
+                    <rect key="frame" x="10" y="8" width="41" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额: 0金豆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-To-Ak7">
+                    <rect key="frame" x="258.5" y="4" width="58.5" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qu7-44-4Im">
+                    <rect key="frame" x="325" y="0.0" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ShS-3P-Ocs"/>
+                        <constraint firstAttribute="width" constant="50" id="jKF-ZR-ChK"/>
+                    </constraints>
+                    <state key="normal" title="充值">
+                        <color key="titleColor" red="0.78472001903553301" green="0.33919863314426085" blue="0.044199201154228991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryo-v2-miF" userLabel="分割线">
+                    <rect key="frame" x="0.0" y="31" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.39699000634517767" green="0.25107789744595499" blue="0.0030644225622288692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="WNa-wc-h08"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="增给: 滋滋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ek-Ny-bk1">
+                    <rect key="frame" x="10" y="293" width="65" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYU-C9-jZ4">
+                    <rect key="frame" x="305" y="280" width="60" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="mGc-PR-Otp"/>
+                    </constraints>
+                    <state key="normal" title="赠送">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="sendGiftBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cZd-Pk-Jnm"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V69-rT-3s1">
+                    <rect key="frame" x="0.0" y="33" width="375" height="242"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ryo-v2-miF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7WU-zb-Q5O"/>
+                <constraint firstAttribute="bottom" secondItem="5Ek-Ny-bk1" secondAttribute="bottom" constant="10" id="8LO-ho-10o"/>
+                <constraint firstItem="5Ek-Ny-bk1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="A7N-zB-qXQ"/>
+                <constraint firstItem="D7T-To-Ak7" firstAttribute="centerY" secondItem="Qu7-44-4Im" secondAttribute="centerY" id="Hdl-61-e0B"/>
+                <constraint firstAttribute="bottom" secondItem="dYU-C9-jZ4" secondAttribute="bottom" constant="10" id="JGt-Ql-ERb"/>
+                <constraint firstItem="Ryo-v2-miF" firstAttribute="top" secondItem="Qu7-44-4Im" secondAttribute="bottom" constant="1" id="PF0-oc-Wxs"/>
+                <constraint firstAttribute="trailing" secondItem="Ryo-v2-miF" secondAttribute="trailing" id="PRu-RD-xA7"/>
+                <constraint firstItem="Qu7-44-4Im" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TIb-6E-whZ"/>
+                <constraint firstAttribute="trailing" secondItem="Qu7-44-4Im" secondAttribute="trailing" id="Xn6-bk-B5e"/>
+                <constraint firstItem="D7T-To-Ak7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="aFq-QK-lS7"/>
+                <constraint firstItem="Qu7-44-4Im" firstAttribute="leading" secondItem="D7T-To-Ak7" secondAttribute="trailing" constant="8" symbolic="YES" id="k39-Gf-onk"/>
+                <constraint firstItem="V69-rT-3s1" firstAttribute="top" secondItem="Ryo-v2-miF" secondAttribute="bottom" constant="1" id="lDh-hn-gxx"/>
+                <constraint firstItem="V69-rT-3s1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mat-4y-Nr1"/>
+                <constraint firstAttribute="trailing" secondItem="V69-rT-3s1" secondAttribute="trailing" id="oYo-LG-wNO"/>
+                <constraint firstItem="Ugk-tq-avo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="tyB-Jr-fpr"/>
+                <constraint firstItem="dYU-C9-jZ4" firstAttribute="top" secondItem="V69-rT-3s1" secondAttribute="bottom" constant="5" id="uzd-nV-jfz"/>
+                <constraint firstAttribute="trailing" secondItem="dYU-C9-jZ4" secondAttribute="trailing" constant="10" id="wCt-ZF-7fV"/>
+                <constraint firstItem="Ugk-tq-avo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="yAL-eT-chi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="giftView" destination="V69-rT-3s1" id="vLh-3T-T2v"/>
+                <outlet property="sendGiftBtn" destination="dYU-C9-jZ4" id="Xem-NP-BqC"/>
+            </connections>
+            <point key="canvasLocation" x="497" y="-186"/>
+        </view>
+    </objects>
+</document>
