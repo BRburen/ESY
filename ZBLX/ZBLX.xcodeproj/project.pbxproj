@@ -38,10 +38,15 @@
 		136175B71FAEC64100EE2B3E /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136175B61FAEC64100EE2B3E /* types.plist */; };
 		1363966D1FC6865200351231 /* ClientSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363966C1FC6865200351231 /* ClientSocket.swift */; };
 		1363966F1FC6866800351231 /* Immessage.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363966E1FC6866800351231 /* Immessage.proto.swift */; };
+		136396721FC6B1B300351231 /* ChatContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136396711FC6B1B300351231 /* ChatContentView.swift */; };
+		136396741FC6B1C400351231 /* ChatContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136396731FC6B1C400351231 /* ChatContentView.xib */; };
+		136396771FC6BCCC00351231 /* ChatContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136396751FC6BCCC00351231 /* ChatContentCell.swift */; };
+		136396781FC6BCCC00351231 /* ChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136396761FC6BCCC00351231 /* ChatContentCell.xib */; };
 		137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F23971FB7072400C779EB /* EmitterAnimation.swift */; };
 		1388B2361FBDE7D200DF7E3C /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1388B2351FBDE7D200DF7E3C /* GiftListView.swift */; };
 		1388B2381FBDE88B00DF7E3C /* GiftListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1388B2371FBDE88B00DF7E3C /* GiftListView.xib */; };
 		1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399557A1FB744C60031AFF4 /* NibLoadable.swift */; };
+		13AF30121FC7285B002CC4F7 /* AttrStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF30111FC7285B002CC4F7 /* AttrStringGenerator.swift */; };
 		13CE3DC01FAC5EC40049D1AB /* ContenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBC1FAC5EC40049D1AB /* ContenerView.swift */; };
 		13CE3DC11FAC5EC40049D1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBD1FAC5EC40049D1AB /* ContentView.swift */; };
 		13CE3DC21FAC5EC40049D1AB /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE3DBE1FAC5EC40049D1AB /* TitleStyle.swift */; };
@@ -103,10 +108,15 @@
 		136175B61FAEC64100EE2B3E /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
 		1363966C1FC6865200351231 /* ClientSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientSocket.swift; sourceTree = "<group>"; };
 		1363966E1FC6866800351231 /* Immessage.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immessage.proto.swift; sourceTree = "<group>"; };
+		136396711FC6B1B300351231 /* ChatContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentView.swift; sourceTree = "<group>"; };
+		136396731FC6B1C400351231 /* ChatContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatContentView.xib; sourceTree = "<group>"; };
+		136396751FC6BCCC00351231 /* ChatContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentCell.swift; sourceTree = "<group>"; };
+		136396761FC6BCCC00351231 /* ChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatContentCell.xib; sourceTree = "<group>"; };
 		137F23971FB7072400C779EB /* EmitterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterAnimation.swift; sourceTree = "<group>"; };
 		1388B2351FBDE7D200DF7E3C /* GiftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
 		1388B2371FBDE88B00DF7E3C /* GiftListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiftListView.xib; sourceTree = "<group>"; };
 		1399557A1FB744C60031AFF4 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		13AF30111FC7285B002CC4F7 /* AttrStringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttrStringGenerator.swift; sourceTree = "<group>"; };
 		13CE3DBC1FAC5EC40049D1AB /* ContenerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenerView.swift; sourceTree = "<group>"; };
 		13CE3DBD1FAC5EC40049D1AB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		13CE3DBE1FAC5EC40049D1AB /* TitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
@@ -198,6 +208,7 @@
 		134AD58E1FB57D4B0040DEAE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				136396701FC6B15D00351231 /* ChatContentView */,
 				1388B2341FBDE75E00DF7E3C /* GiftView */,
 				1346D9681FBD42C800B288A4 /* ChatToolsView */,
 			);
@@ -324,6 +335,7 @@
 			children = (
 				1352E9D71FAD8A55004DFA15 /* NetWorkTools.swift */,
 				1352E9D91FAD8A78004DFA15 /* KingfisherExtension.swift */,
+				13AF30111FC7285B002CC4F7 /* AttrStringGenerator.swift */,
 			);
 			path = HTTPTool;
 			sourceTree = "<group>";
@@ -345,6 +357,17 @@
 				1363966E1FC6866800351231 /* Immessage.proto.swift */,
 			);
 			path = ClientSocket;
+			sourceTree = "<group>";
+		};
+		136396701FC6B15D00351231 /* ChatContentView */ = {
+			isa = PBXGroup;
+			children = (
+				136396711FC6B1B300351231 /* ChatContentView.swift */,
+				136396731FC6B1C400351231 /* ChatContentView.xib */,
+				136396751FC6BCCC00351231 /* ChatContentCell.swift */,
+				136396761FC6BCCC00351231 /* ChatContentCell.xib */,
+			);
+			path = ChatContentView;
 			sourceTree = "<group>";
 		};
 		137F23961FB706EC00C779EB /* Protocol */ = {
@@ -525,6 +548,7 @@
 			files = (
 				1346D9601FBD419800B288A4 /* QHSohuGifSort.plist in Resources */,
 				134F6ED41FA5B034007B449D /* Rank.storyboard in Resources */,
+				136396741FC6B1C400351231 /* ChatContentView.xib in Resources */,
 				134F6EBE1FA5AA0C007B449D /* LaunchScreen.storyboard in Resources */,
 				134F6EBB1FA5AA0C007B449D /* Assets.xcassets in Resources */,
 				136175B71FAEC64100EE2B3E /* types.plist in Resources */,
@@ -539,6 +563,7 @@
 				136175B41FAEB8F100EE2B3E /* HomeViewCell.xib in Resources */,
 				13FD8B301FA6CFAA00227847 /* Profile.storyboard in Resources */,
 				134F6ED71FA5B062007B449D /* Discover.storyboard in Resources */,
+				136396781FC6BCCC00351231 /* ChatContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +640,7 @@
 				13E321871FA5BB800094AF4C /* MainViewController.swift in Sources */,
 				134F6EB61FA5AA0C007B449D /* ViewController.swift in Sources */,
 				13FD8B361FA6D1C900227847 /* DiscoverViewController.swift in Sources */,
+				136396771FC6BCCC00351231 /* ChatContentCell.swift in Sources */,
 				1346D9901FBD747B00B288A4 /* EmoticonView.swift in Sources */,
 				1346D9921FBD759500B288A4 /* Emoticon.swift in Sources */,
 				137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */,
@@ -625,6 +651,7 @@
 				13CE3DC61FAC5EF60049D1AB /* WaterfallLayout.swift in Sources */,
 				1363966F1FC6866800351231 /* Immessage.proto.swift in Sources */,
 				1388B2361FBDE7D200DF7E3C /* GiftListView.swift in Sources */,
+				136396721FC6B1B300351231 /* ChatContentView.swift in Sources */,
 				1336DB0E1FBC8BCB00595E63 /* PageCollectionViewLayout.swift in Sources */,
 				1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */,
 				13CE3DC11FAC5EC40049D1AB /* ContentView.swift in Sources */,
@@ -636,6 +663,7 @@
 				13CE3DCF1FAC6A6C0049D1AB /* NSDate+Extention.swift in Sources */,
 				13CE3DE61FAC7F2F0049D1AB /* BaseModel.swift in Sources */,
 				134AD5911FB57D630040DEAE /* RoomViewController.swift in Sources */,
+				13AF30121FC7285B002CC4F7 /* AttrStringGenerator.swift in Sources */,
 				13CE3DCC1FAC69780049D1AB /* File.swift in Sources */,
 				1346D9971FBD782000B288A4 /* EmoticonViewModel.swift in Sources */,
 				13CE3DC01FAC5EC40049D1AB /* ContenerView.swift in Sources */,

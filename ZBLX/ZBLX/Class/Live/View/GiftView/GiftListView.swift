@@ -109,7 +109,8 @@ extension GiftListView : PageCollectionViewDelegate {
     }
     
     @IBAction func sendGiftBtnClick(_ sender: UIButton) {
-        let giftModel = giftViewModel.giftlistData[(currentIndex?.section)!].list[(currentIndex?.item)!]
+        let giftModel = giftViewModel.giftlistData[(currentIndex!.section)].list[(currentIndex!.item)]
+        print(giftModel.subject)
         self.delegate?.giftListView(self, giftModel)
     }
     

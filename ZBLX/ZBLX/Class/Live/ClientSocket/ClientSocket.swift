@@ -42,6 +42,7 @@ extension ClientSocket {
     func connectSever() -> (Bool){
         let result = tcpClient.connect(timeout: 5)
         if result.isSuccess {
+            startReadMsg()
             return true
         }else{
          return false
@@ -116,7 +117,7 @@ extension ClientSocket {
     func sendTextMsg(message : String){
         
         let textMsg = TextMessage.Builder()
-        textMsg.user = userInfo.buildPartial()
+        textMsg.user = try! userInfo.build()
         textMsg.text = message
         //转成data
         let messageData = (try! textMsg.build()).data()
@@ -126,7 +127,7 @@ extension ClientSocket {
     
     func sendGiftMsg(giftName : String ,giftUrl : String ,giftCount : Int){
         let giftMessage = GirftMessage.Builder()
-        giftMessage.user = userInfo.buildPartial()
+        giftMessage.user = try! userInfo.build()
         giftMessage.giftName = giftName
         giftMessage.giftUrl = giftUrl
         giftMessage.giftCount = Int64(giftCount)

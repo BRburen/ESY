@@ -39,16 +39,16 @@ extension EmitterAnimation where Self : UIViewController{
             //4 设置粒子方向
             //        cell.emissionLatitude   //维度 水平方向
             //        cell.emissionLongitude  //精度 垂直方向
-            cell.emissionLongitude = CGFloat(-M_PI_2)
-            cell.emissionRange = CGFloat(M_PI_2 / 6)
+            cell.emissionLongitude = CGFloat(-Double.pi / 2)
+            cell.emissionRange = CGFloat(Double.pi / 2 / 6)
             
             //4 设置粒子存活时间
             cell.lifetime = 3
             cell.lifetimeRange = 1.5
             
             //4 设置粒子旋转
-            cell.spin = CGFloat(M_PI_2)
-            cell.spinRange = CGFloat(M_PI_2 / 6 )
+            cell.spin = CGFloat(Double.pi / 2)
+            cell.spinRange = CGFloat(Double.pi / 2 / 6 )
             
             //4 设置每秒中弹出 的个数
             cell.birthRate = 2

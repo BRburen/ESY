@@ -26,7 +26,7 @@ class ContenerView: UIView {
         self.parentVc = parentVc
         self.titleStyle = titleStyle
         
-        parentVc.automaticallyAdjustsScrollViewInsets = false
+//        parentVc.automaticallyAdjustsScrollViewInsets = false
         
         setupUI()
     }
