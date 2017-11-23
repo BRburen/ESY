@@ -36,6 +36,8 @@
 		136175B31FAEB8F100EE2B3E /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136175B11FAEB8F100EE2B3E /* HomeViewCell.swift */; };
 		136175B41FAEB8F100EE2B3E /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136175B21FAEB8F100EE2B3E /* HomeViewCell.xib */; };
 		136175B71FAEC64100EE2B3E /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136175B61FAEC64100EE2B3E /* types.plist */; };
+		1363966D1FC6865200351231 /* ClientSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363966C1FC6865200351231 /* ClientSocket.swift */; };
+		1363966F1FC6866800351231 /* Immessage.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363966E1FC6866800351231 /* Immessage.proto.swift */; };
 		137F23981FB7072400C779EB /* EmitterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F23971FB7072400C779EB /* EmitterAnimation.swift */; };
 		1388B2361FBDE7D200DF7E3C /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1388B2351FBDE7D200DF7E3C /* GiftListView.swift */; };
 		1388B2381FBDE88B00DF7E3C /* GiftListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1388B2371FBDE88B00DF7E3C /* GiftListView.xib */; };
@@ -99,6 +101,8 @@
 		136175B11FAEB8F100EE2B3E /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		136175B21FAEB8F100EE2B3E /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		136175B61FAEC64100EE2B3E /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
+		1363966C1FC6865200351231 /* ClientSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientSocket.swift; sourceTree = "<group>"; };
+		1363966E1FC6866800351231 /* Immessage.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immessage.proto.swift; sourceTree = "<group>"; };
 		137F23971FB7072400C779EB /* EmitterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterAnimation.swift; sourceTree = "<group>"; };
 		1388B2351FBDE7D200DF7E3C /* GiftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
 		1388B2371FBDE88B00DF7E3C /* GiftListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiftListView.xib; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		134AD58C1FB57D270040DEAE /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				1363966B1FC6863A00351231 /* ClientSocket */,
 				1346D9951FBD780D00B288A4 /* ViewModel */,
 				134AD58F1FB57D500040DEAE /* Model */,
 				134AD58E1FB57D4B0040DEAE /* View */,
@@ -331,6 +336,15 @@
 				136175B61FAEC64100EE2B3E /* types.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		1363966B1FC6863A00351231 /* ClientSocket */ = {
+			isa = PBXGroup;
+			children = (
+				1363966C1FC6865200351231 /* ClientSocket.swift */,
+				1363966E1FC6866800351231 /* Immessage.proto.swift */,
+			);
+			path = ClientSocket;
 			sourceTree = "<group>";
 		};
 		137F23961FB706EC00C779EB /* Protocol */ = {
@@ -609,6 +623,7 @@
 				13FD8B321FA6D0F700227847 /* HomeViewController.swift in Sources */,
 				13CE3DC21FAC5EC40049D1AB /* TitleStyle.swift in Sources */,
 				13CE3DC61FAC5EF60049D1AB /* WaterfallLayout.swift in Sources */,
+				1363966F1FC6866800351231 /* Immessage.proto.swift in Sources */,
 				1388B2361FBDE7D200DF7E3C /* GiftListView.swift in Sources */,
 				1336DB0E1FBC8BCB00595E63 /* PageCollectionViewLayout.swift in Sources */,
 				1399557B1FB744C60031AFF4 /* NibLoadable.swift in Sources */,
@@ -624,6 +639,7 @@
 				13CE3DCC1FAC69780049D1AB /* File.swift in Sources */,
 				1346D9971FBD782000B288A4 /* EmoticonViewModel.swift in Sources */,
 				13CE3DC01FAC5EC40049D1AB /* ContenerView.swift in Sources */,
+				1363966D1FC6865200351231 /* ClientSocket.swift in Sources */,
 				1352E9DC1FAD8E62004DFA15 /* HomeViewModel.swift in Sources */,
 				136175B31FAEB8F100EE2B3E /* HomeViewCell.swift in Sources */,
 				13FD8B381FA6D20900227847 /* BRNavigationController.swift in Sources */,
